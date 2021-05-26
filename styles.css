@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 100px;
+  padding: 0 5%;
+  z-index: 10;
+  background: linear-gradient(to right, rgb(237, 33, 58), rgb(147, 41, 30));
+  box-shadow: 1px 1px 2px #000;
+}
+nav .logo {
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 1000;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 5px #000;
+}
+nav .links {
+  float: right;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav .links li {
+  list-style: none;
+}
+nav .links a {
+  display: flex;
+  padding: 1em;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Righteous', cursive;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #000;
+  color: gray;
+  transition: 0.5s;
+}
+nav .links a:hover {
+  text-shadow: none;
+  transform: scale(1.2, 1.2);
+  color: #fff;
+}
+#nav_toggle {
+  position: absolute;
+  top: -100px;
+}
+nav .icon_burger {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+}
+nav .icon_burger .line {
+  width: 30px;
+  height: 5px;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 3px;
+}
+@media screen and (max-width: 768px) {
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+  }
+  nav .links {
+    float: none;
+    z-index: 9;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    top: 100px;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    background: linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+  }
+  nav .links a {
+    font-size: 20px;
+  }
+  nav .icon_burger {
+    display: block;
+  }
+  nav :checked ~ .links {
+    bottom: 0;
+  }
+  nav :checked ~ .icon_burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+  nav :checked ~ .icon_burger .line:nth-child(2) {
+    opacity: 0;
+  }
+  nav :checked ~ .icon_burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+}
+.home {
+  height: 100vh;
+  width: 100%;
+}
+.about {
+  height: 100vh;
+  width: 100%;
+}
